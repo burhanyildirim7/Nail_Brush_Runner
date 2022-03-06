@@ -8,12 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: sarisu
-  m_Shader: {fileID: 4800000, guid: 4bcc0b68579a5c740ad31644411ffb54, type: 3}
-  m_ShaderKeywords: _LIGHTING_ON _SECONDARY_WAVES_ON
+  m_Shader: {fileID: 4800000, guid: 644d4419f6d30214892dd65158332ba7, type: 3}
+  m_ShaderKeywords: _LIGHTING_ON _USEINTERSECTIONFOAM_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -179,7 +179,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor: {r: 1, g: 0.84919274, b: 0.5019608, a: 0.666}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 0.453}
+    - _RimColor: {r: 1, g: 0.30283493, b: 0, a: 0.453}
     - _WaterColor: {r: 1, g: 0.6573338, b: 0.11764705, a: 0}
     - _WaterShallowColor: {r: 1, g: 0.81610763, b: 0.41960788, a: 1}
     - _WaveDirection: {r: 0, g: 0, b: -1, a: 0}
