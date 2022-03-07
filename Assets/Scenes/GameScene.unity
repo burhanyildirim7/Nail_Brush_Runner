@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4770398, g: 0.79908794, b: 0.8987446, a: 1}
+  m_IndirectSpecularColor: {r: 0.4788496, g: 0.80017924, b: 0.8994595, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -907,6 +907,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LEVEL 1 Deneme
       objectReference: {fileID: 0}
+    - target: {fileID: 3135238916184762873, guid: 1a1b0114ec0d345d8b17d3f7e10d9048, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3135238916184762874, guid: 1a1b0114ec0d345d8b17d3f7e10d9048, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1277,6 +1281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FircaCollectable
       objectReference: {fileID: 0}
+    - target: {fileID: 9082247073678897776, guid: 1db3a951860c942b1a73abf99cb375dd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1db3a951860c942b1a73abf99cb375dd, type: 3}
 --- !u!1 &1994317953
@@ -1517,8 +1525,8 @@ MonoBehaviour:
   tempLevelNo: 0
   totalLevelNo: 0
   levels:
-  - {fileID: 1144263604}
-  - {fileID: 1144263604}
+  - {fileID: 4757567978091262336, guid: 7e74c0782fe514cd9bab5fd21ebdfad5, type: 3}
+  - {fileID: 4757567978091262336, guid: 7e74c0782fe514cd9bab5fd21ebdfad5, type: 3}
 --- !u!1 &2080463388
 GameObject:
   m_ObjectHideFlags: 0

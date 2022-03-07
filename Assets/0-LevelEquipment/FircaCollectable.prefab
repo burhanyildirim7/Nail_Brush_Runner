@@ -1007,6 +1007,7 @@ GameObject:
   - component: {fileID: 8449121492461316298}
   - component: {fileID: 3167992129588864143}
   - component: {fileID: 3700753147545335984}
+  - component: {fileID: 6796635939847546293}
   m_Layer: 0
   m_Name: FircaCollectable
   m_TagString: collectible
@@ -1023,7 +1024,7 @@ Transform:
   m_GameObject: {fileID: 9082247073678897776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.8, y: 0.58, z: 29.677908}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3382559338919630096}
@@ -1071,6 +1072,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!95 &6796635939847546293
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9082247073678897776}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7e35b398544b4cd099d0052235595b8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5034901638638983311
 PrefabInstance:
   m_ObjectHideFlags: 0
