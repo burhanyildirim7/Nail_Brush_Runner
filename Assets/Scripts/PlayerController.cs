@@ -14,6 +14,12 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private List<Color> _renkler = new List<Color>();
 
+    [SerializeField] private GameObject _fircaUcu;
+
+    [SerializeField] private GameObject _fircaUcuParent;
+
+    private GameObject _degdigiObje;
+
 
     private void Awake()
     {
@@ -25,7 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         StartingEvents();
         //Color renk = new Color(55f, 55f, 55f, 255f);
-        P3dPaintDecal.instance.color = _renkler[0];
+
     }
 
     /// <summary>
@@ -38,8 +44,11 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("collectible"))
         {
+            FircaCogalmaScripti.instance.FircaCogalt();
             // COLLECTIBLE CARPINCA YAPILACAKLAR...
             GameController.instance.SetScore(collectibleDegeri); // ORNEK KULLANIM detaylar icin ctrl+click yapip fonksiyon aciklamasini oku
+
+            Destroy(other.gameObject);
 
         }
         else if (other.CompareTag("engel"))
@@ -68,7 +77,64 @@ public class PlayerController : MonoBehaviour
 
 
         }
+        else if (other.CompareTag("HavuzaGiris"))
+        {
+            transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 1f, transform.localPosition.z);
 
+            // _degdigiObje = other.gameObject;
+            //StartCoroutine(HavuzaGirisNumerator());
+        }
+        else if (other.CompareTag("HavuzunOrtasi"))
+        {
+            // transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
+            // transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 1f, transform.localPosition.z);
+
+            int deger = other.gameObject.GetComponent<HavuzRengiScript>()._renkDegeri;
+            P3dPaintDecal.instance.color = _renkler[deger];
+
+            for (int i = 0; i < _fircaUcuParent.transform.childCount; i++)
+            {
+                _fircaUcuParent.transform.GetChild(i).gameObject.transform.GetChild(0).GetComponent<P3dPaintDecal>().color = _renkler[deger];
+            }
+
+
+            _fircaUcu.GetComponent<MeshRenderer>().material.color = _renkler[deger];
+
+            // _degdigiObje = other.gameObject;
+            //StartCoroutine(HavuzaGirisNumerator());
+        }
+        else if (other.CompareTag("HavuzdanCikis"))
+        {
+            //transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
+
+            // _degdigiObje = other.gameObject;
+            //StartCoroutine(HavuzaGirisNumerator());
+        }
+        else if (other.CompareTag("CogalmaKapisi"))
+        {
+            //transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
+            //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
+
+            int kapideger = other.gameObject.GetComponent<CogalmaKapiScript>()._kapiDegeri;
+
+            for (int i = 0; i < kapideger; i++)
+            {
+                FircaCogalmaScripti.instance.FircaCogalt();
+            }
+
+            // _degdigiObje = other.gameObject;
+            //StartCoroutine(HavuzaGirisNumerator());
+        }
+
+    }
+
+
+    private IEnumerator HavuzaGirisNumerator()
+    {
+        transform.position = Vector3.Lerp(transform.position, new Vector3(_degdigiObje.gameObject.transform.position.x, transform.position.y, transform.position.z), 10);
+        yield return new WaitForSeconds(0.1f);
     }
 
 

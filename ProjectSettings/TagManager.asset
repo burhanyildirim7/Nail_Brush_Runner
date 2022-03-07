@@ -11,6 +11,10 @@ TagManager:
   - finish
   - collectible
   - elmas
+  - HavuzaGiris
+  - HavuzdanCikis
+  - HavuzunOrtasi
+  - CogalmaKapisi
   layers:
   - Default
   - TransparentFX

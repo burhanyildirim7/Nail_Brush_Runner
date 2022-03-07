@@ -512,6 +512,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -597,6 +598,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6826d214a2b9d40ab90568c700cf2ca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b9ae18c04c25345a5622a4d1fdcf22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1019699758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1019699759}
+  m_Layer: 0
+  m_Name: FircaUcuParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1019699759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019699758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6592660924675858380}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1124119772
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,6 +883,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1432326032451545018, guid: 1a1b0114ec0d345d8b17d3f7e10d9048, type: 3}
+      propertyPath: rimColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432326032451545018, guid: 1a1b0114ec0d345d8b17d3f7e10d9048, type: 3}
+      propertyPath: rimColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432326032774511035, guid: 1a1b0114ec0d345d8b17d3f7e10d9048, type: 3}
+      propertyPath: rimColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432326032774511035, guid: 1a1b0114ec0d345d8b17d3f7e10d9048, type: 3}
+      propertyPath: rimColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432326032774511035, guid: 1a1b0114ec0d345d8b17d3f7e10d9048, type: 3}
+      propertyPath: rimColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3135238916184762873, guid: 1a1b0114ec0d345d8b17d3f7e10d9048, type: 3}
       propertyPath: m_Name
       value: LEVEL 1 Deneme
@@ -1041,6 +1105,8 @@ MonoBehaviour:
   - {r: 0.972549, g: 0.7752371, b: 0.07058822, a: 1}
   - {r: 0.074969135, g: 0.972549, b: 0.07058822, a: 1}
   - {r: 0.07058822, g: 0.5078398, b: 0.972549, a: 1}
+  _fircaUcu: {fileID: 7948366028731414055}
+  _fircaUcuParent: {fileID: 1019699758}
 --- !u!54 &1443049515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1121,7 +1187,7 @@ MonoBehaviour:
   color: {r: 0.94275045, g: 0, b: 1, a: 1}
   opacity: 1
   angle: 0
-  scale: {x: 0.1, y: 2, z: 0.1}
+  scale: {x: 0.2, y: 2, z: 0.1}
   radius: 0.5
   hardness: 50
   wrapping: 0
@@ -1402,7 +1468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a053a4bd379048008b9a4e6d62bb041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _speed: 5
 --- !u!1 &2063141234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,7 +1536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2080463389
 Transform:
   m_ObjectHideFlags: 0
@@ -4964,6 +5030,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoyanacakObjeOrnek
       objectReference: {fileID: 0}
+    - target: {fileID: 3943133105539924805, guid: 7358ce9f8aa544fadbc1619c4daa83a2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3943133105539924857, guid: 7358ce9f8aa544fadbc1619c4daa83a2, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -5030,7 +5100,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5645787976053904028, guid: 34af7158bb6c54f71a6c222b910c83fb, type: 3}
+  - {fileID: 2100000, guid: 373c0cada81434ea9b664f734efab277, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5079,6 +5149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6592660924675858380}
+  - component: {fileID: 6592660924675858381}
   m_Layer: 0
   m_Name: FircaPlayer
   m_TagString: Untagged
@@ -5142,9 +5213,26 @@ Transform:
   - {fileID: 57942996009443862}
   - {fileID: 104891378436549366}
   - {fileID: 8286408276743696267}
+  - {fileID: 1019699759}
   m_Father: {fileID: 1443049508}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6592660924675858381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5779814330972718454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312b8ff361f1a4e79800961456c8ba50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fircaAdeti: 0
+  cogalacakObje: {fileID: 7948366028731414055}
+  cogalacakObjeParent: {fileID: 1019699758}
+  degerRotasyon: 4
 --- !u!114 &6849821079263090043
 MonoBehaviour:
   m_ObjectHideFlags: 0
