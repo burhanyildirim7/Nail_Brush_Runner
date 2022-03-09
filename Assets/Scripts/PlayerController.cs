@@ -82,6 +82,8 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
             transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 1f, transform.localPosition.z);
 
+            GameController.instance._havuzda = true;
+
             // _degdigiObje = other.gameObject;
             //StartCoroutine(HavuzaGirisNumerator());
         }
@@ -108,6 +110,8 @@ public class PlayerController : MonoBehaviour
         {
             //transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
             transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
+
+            GameController.instance._havuzda = false;
 
             // _degdigiObje = other.gameObject;
             //StartCoroutine(HavuzaGirisNumerator());

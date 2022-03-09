@@ -21,7 +21,7 @@ public class SwerveMovement : MonoBehaviour
 
     private void Update()
     {
-        if (GameController.instance.isContinue == true)
+        if (GameController.instance.isContinue == true && GameController.instance._havuzda == false)
         {
             centerPosition = _getPoint.transform.position;
 
@@ -40,6 +40,6 @@ public class SwerveMovement : MonoBehaviour
                 transform.position = centerPosition + fromOriginToObject;
             }
         }
-       
+
     }
 }
