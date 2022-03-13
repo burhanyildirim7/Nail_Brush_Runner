@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4788496, g: 0.80017924, b: 0.8994595, a: 1}
+  m_IndirectSpecularColor: {r: 0.4770398, g: 0.79908794, b: 0.8987446, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -930,6 +930,10 @@ MonoBehaviour:
   elmas: 0
   isContinue: 0
   _havuzda: 0
+  _playerStar: 0
+  _playerTeddy: 0
+  _playerKalp: 0
+  _playerMoney: 0
 --- !u!4 &1124119774
 Transform:
   m_ObjectHideFlags: 0
@@ -1444,6 +1448,10 @@ MonoBehaviour:
   - {r: 0.07058822, g: 0.5078398, b: 0.972549, a: 1}
   _fircaUcu: {fileID: 7948366028731414055}
   _fircaUcuParent: {fileID: 1019699758}
+  _starObject: {fileID: 972337060}
+  _teddyObject: {fileID: 1191760336}
+  _kalpObject: {fileID: 1679300154}
+  _moneyObject: {fileID: 627276617}
 --- !u!54 &1443049515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5700,13 +5708,44 @@ GameObject:
   - component: {fileID: 57942996009443862}
   - component: {fileID: 1625521015794696290}
   - component: {fileID: 4541023608402333432}
+  - component: {fileID: 7948366028731414057}
+  - component: {fileID: 7948366028731414056}
   m_Layer: 0
   m_Name: FircaBolumu
-  m_TagString: Untagged
+  m_TagString: FircaBolumu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!54 &7948366028731414056
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7948366028731414055}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &7948366028731414057
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7948366028731414055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.042741556, y: 0.015160594, z: 0.020000001}
+  m_Center: {x: -0.013888655, y: 0.000035433975, z: -0.010000064}
 --- !u!222 &8065103501126037052
 CanvasRenderer:
   m_ObjectHideFlags: 0

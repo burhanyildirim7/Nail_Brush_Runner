@@ -12,7 +12,19 @@ public class GameController : MonoBehaviour
     [HideInInspector] public bool isContinue;  // ayrintilar icin beni oku 19. satirdan itibaren bak
 
 
-    public bool _havuzda;
+    [HideInInspector] public bool _havuzda;
+
+    [HideInInspector] public bool _playerStar;
+    [HideInInspector] public bool _playerTeddy;
+    [HideInInspector] public bool _playerKalp;
+    [HideInInspector] public bool _playerMoney;
+
+
+    [HideInInspector] public bool _finisheGeldi;
+
+
+
+
 
     private void Awake()
     {
@@ -24,6 +36,11 @@ public class GameController : MonoBehaviour
     {
         isContinue = false;
         _havuzda = false;
+        _playerStar = false;
+        _playerTeddy = false;
+        _playerKalp = false;
+        _playerMoney = false;
+        _finisheGeldi = false;
     }
 
 

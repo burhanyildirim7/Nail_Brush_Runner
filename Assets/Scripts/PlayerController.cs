@@ -18,7 +18,14 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject _fircaUcuParent;
 
+    [SerializeField] private GameObject _starObject;
+    [SerializeField] private GameObject _teddyObject;
+    [SerializeField] private GameObject _kalpObject;
+    [SerializeField] private GameObject _moneyObject;
+
     private GameObject _degdigiObje;
+
+
 
 
     private void Awake()
@@ -69,8 +76,10 @@ public class PlayerController : MonoBehaviour
         {
             // finishe collider eklenecek levellerde...
             // FINISH NOKTASINA GELINCE YAPILACAKLAR... Totalscore artırma, x işlemleri, efektler v.s. v.s.
-            GameController.instance.isContinue = false;
-            GameController.instance.ScoreCarp(7);  // Bu fonksiyon normalde x ler hesaplandıktan sonra çağrılacak. Parametre olarak x i alıyor. 
+            //GameController.instance.isContinue = false;
+            GameController.instance._finisheGeldi = true;
+            transform.position = new Vector3(0, transform.position.y, 0);
+            GameController.instance.ScoreCarp(1);  // Bu fonksiyon normalde x ler hesaplandıktan sonra çağrılacak. Parametre olarak x i alıyor. 
             // x değerine göre oyuncunun total scoreunu hesaplıyor.. x li olmayan oyunlarda parametre olarak 1 gönderilecek.
             UIController.instance.ActivateWinScreen(); // finish noktasına gelebildiyse her türlü win screen aktif edilecek.. ama burada değil..
                                                        // normal de bu kodu x ler hesaplandıktan sonra çağıracağız. Ve bu kod çağrıldığında da kazanılan puanlar animasyonlu şekilde artacak..
@@ -131,6 +140,84 @@ public class PlayerController : MonoBehaviour
             // _degdigiObje = other.gameObject;
             //StartCoroutine(HavuzaGirisNumerator());
         }
+        else if (other.CompareTag("EksilmeKapisi"))
+        {
+            //transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
+            //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
+
+            int kapideger = other.gameObject.GetComponent<CogalmaKapiScript>()._kapiDegeri;
+
+            for (int i = 0; i < kapideger; i++)
+            {
+                FircaCogalmaScripti.instance.FircaCogalt();
+            }
+
+            // _degdigiObje = other.gameObject;
+            //StartCoroutine(HavuzaGirisNumerator());
+        }
+        else if (other.CompareTag("CarpmaKapisi"))
+        {
+            //transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
+            //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
+
+            int kapideger = other.gameObject.GetComponent<CogalmaKapiScript>()._kapiDegeri;
+
+            for (int i = 0; i < kapideger; i++)
+            {
+                FircaCogalmaScripti.instance.FircaCogalt();
+            }
+
+            // _degdigiObje = other.gameObject;
+            //StartCoroutine(HavuzaGirisNumerator());
+        }
+        else if (other.CompareTag("StarKapisi"))
+        {
+            GameController.instance._playerMoney = false;
+            GameController.instance._playerKalp = false;
+            GameController.instance._playerTeddy = false;
+            GameController.instance._playerStar = true;
+
+            _moneyObject.SetActive(false);
+            _kalpObject.SetActive(false);
+            _teddyObject.SetActive(false);
+            _starObject.SetActive(true);
+        }
+        else if (other.CompareTag("TeddyKapisi"))
+        {
+            GameController.instance._playerStar = false;
+            GameController.instance._playerMoney = false;
+            GameController.instance._playerKalp = false;
+            GameController.instance._playerTeddy = true;
+
+            _starObject.SetActive(false);
+            _moneyObject.SetActive(false);
+            _kalpObject.SetActive(false);
+            _teddyObject.SetActive(true);
+        }
+        else if (other.CompareTag("KalpKapisi"))
+        {
+            GameController.instance._playerTeddy = false;
+            GameController.instance._playerStar = false;
+            GameController.instance._playerMoney = false;
+            GameController.instance._playerKalp = true;
+
+            _teddyObject.SetActive(false);
+            _starObject.SetActive(false);
+            _moneyObject.SetActive(false);
+            _kalpObject.SetActive(true);
+        }
+        else if (other.CompareTag("MoneyKapisi"))
+        {
+            GameController.instance._playerKalp = false;
+            GameController.instance._playerTeddy = false;
+            GameController.instance._playerStar = false;
+            GameController.instance._playerMoney = true;
+
+            _kalpObject.SetActive(false);
+            _teddyObject.SetActive(false);
+            _starObject.SetActive(false);
+            _moneyObject.SetActive(true);
+        }
 
     }
 
@@ -151,9 +238,21 @@ public class PlayerController : MonoBehaviour
         transform.parent.transform.rotation = Quaternion.Euler(0, 0, 0);
         transform.parent.transform.position = Vector3.zero;
         GameController.instance.isContinue = false;
+        GameController.instance._finisheGeldi = false;
         GameController.instance.score = 0;
         transform.position = new Vector3(0, transform.position.y, 0);
         GetComponent<Collider>().enabled = true;
+
+
+        GameController.instance._playerKalp = false;
+        GameController.instance._playerTeddy = false;
+        GameController.instance._playerStar = false;
+        GameController.instance._playerMoney = false;
+
+        _kalpObject.SetActive(false);
+        _teddyObject.SetActive(false);
+        _starObject.SetActive(false);
+        _moneyObject.SetActive(false);
 
     }
 

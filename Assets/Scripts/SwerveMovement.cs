@@ -21,7 +21,7 @@ public class SwerveMovement : MonoBehaviour
 
     private void Update()
     {
-        if (GameController.instance.isContinue == true && GameController.instance._havuzda == false)
+        if (GameController.instance.isContinue == true && GameController.instance._havuzda == false && GameController.instance._finisheGeldi == false)
         {
             centerPosition = _getPoint.transform.position;
 
