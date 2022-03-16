@@ -7,12 +7,14 @@ public class FircaCogalmaScripti : MonoBehaviour
 
     public static FircaCogalmaScripti instance;
 
-    [SerializeField] int fircaAdeti;
+    [HideInInspector] public int fircaAdeti;
     //[SerializeField] string okunacakObjeninTagi;
     [SerializeField] GameObject cogalacakObje, cogalacakObjeParent;
     [SerializeField] int degerRotasyon;
 
     int donusDegeri;
+
+    [HideInInspector] public int eksilmeAdeti;
 
 
     private void Awake()
@@ -25,6 +27,7 @@ public class FircaCogalmaScripti : MonoBehaviour
     void Start()
     {
         fircaAdeti = 0;
+        eksilmeAdeti = 0;
     }
 
     /*
@@ -67,5 +70,27 @@ public class FircaCogalmaScripti : MonoBehaviour
         //rotasyon ayarlama
         tempObj1.transform.eulerAngles = new Vector3((-90 + donusDegeri), 90, -180);
         tempObj2.transform.eulerAngles = new Vector3((-90 - donusDegeri), 90, -180);
+
+        //eksilmeAdeti = 0;
+    }
+
+    public void FircaEksilt()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            Destroy(cogalacakObjeParent.transform.GetChild(cogalacakObjeParent.transform.childCount - 1 - eksilmeAdeti).gameObject);
+            eksilmeAdeti++;
+        }
+
+        fircaAdeti--;
+    }
+
+    public void FircayiSifirla()
+    {
+        for (int i = 0; i < cogalacakObjeParent.transform.childCount; i++)
+        {
+            Destroy(cogalacakObjeParent.transform.GetChild(cogalacakObjeParent.transform.childCount - 1 - i).gameObject);
+
+        }
     }
 }

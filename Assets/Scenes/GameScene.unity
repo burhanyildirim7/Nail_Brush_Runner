@@ -934,6 +934,7 @@ MonoBehaviour:
   _playerTeddy: 0
   _playerKalp: 0
   _playerMoney: 0
+  _finisheGeldi: 0
 --- !u!4 &1124119774
 Transform:
   m_ObjectHideFlags: 0
@@ -1446,6 +1447,7 @@ MonoBehaviour:
   - {r: 0.972549, g: 0.7752371, b: 0.07058822, a: 1}
   - {r: 0.074969135, g: 0.972549, b: 0.07058822, a: 1}
   - {r: 0.07058822, g: 0.5078398, b: 0.972549, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
   _fircaUcu: {fileID: 7948366028731414055}
   _fircaUcuParent: {fileID: 1019699758}
   _starObject: {fileID: 972337060}
@@ -5659,6 +5661,7 @@ MonoBehaviour:
   cogalacakObje: {fileID: 7948366028731414055}
   cogalacakObjeParent: {fileID: 1019699758}
   degerRotasyon: 4
+  eksilmeAdeti: 0
 --- !u!114 &6849821079263090043
 MonoBehaviour:
   m_ObjectHideFlags: 0

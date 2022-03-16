@@ -78,11 +78,11 @@ public class PlayerController : MonoBehaviour
             // FINISH NOKTASINA GELINCE YAPILACAKLAR... Totalscore artırma, x işlemleri, efektler v.s. v.s.
             //GameController.instance.isContinue = false;
             GameController.instance._finisheGeldi = true;
-            transform.position = new Vector3(0, transform.position.y, 0);
+            transform.position = new Vector3(0, transform.position.y, transform.position.z);
             GameController.instance.ScoreCarp(1);  // Bu fonksiyon normalde x ler hesaplandıktan sonra çağrılacak. Parametre olarak x i alıyor. 
-            // x değerine göre oyuncunun total scoreunu hesaplıyor.. x li olmayan oyunlarda parametre olarak 1 gönderilecek.
-            UIController.instance.ActivateWinScreen(); // finish noktasına gelebildiyse her türlü win screen aktif edilecek.. ama burada değil..
-                                                       // normal de bu kodu x ler hesaplandıktan sonra çağıracağız. Ve bu kod çağrıldığında da kazanılan puanlar animasyonlu şekilde artacak..
+                                                   // x değerine göre oyuncunun total scoreunu hesaplıyor.. x li olmayan oyunlarda parametre olarak 1 gönderilecek.
+                                                   //UIController.instance.ActivateWinScreen(); // finish noktasına gelebildiyse her türlü win screen aktif edilecek.. ama burada değil..
+                                                   // normal de bu kodu x ler hesaplandıktan sonra çağıracağız. Ve bu kod çağrıldığında da kazanılan puanlar animasyonlu şekilde artacak..
 
 
         }
@@ -130,6 +130,8 @@ public class PlayerController : MonoBehaviour
             //transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
             //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
 
+            FircaCogalmaScripti.instance.eksilmeAdeti = 0;
+
             int kapideger = other.gameObject.GetComponent<CogalmaKapiScript>()._kapiDegeri;
 
             for (int i = 0; i < kapideger; i++)
@@ -145,27 +147,25 @@ public class PlayerController : MonoBehaviour
             //transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
             //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
 
-            int kapideger = other.gameObject.GetComponent<CogalmaKapiScript>()._kapiDegeri;
+            FircaCogalmaScripti.instance.eksilmeAdeti = 0;
 
-            for (int i = 0; i < kapideger; i++)
-            {
-                FircaCogalmaScripti.instance.FircaCogalt();
-            }
-
-            // _degdigiObje = other.gameObject;
-            //StartCoroutine(HavuzaGirisNumerator());
-        }
-        else if (other.CompareTag("CarpmaKapisi"))
-        {
-            //transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
-            //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
 
             int kapideger = other.gameObject.GetComponent<CogalmaKapiScript>()._kapiDegeri;
 
-            for (int i = 0; i < kapideger; i++)
+            if (FircaCogalmaScripti.instance.fircaAdeti >= kapideger)
             {
-                FircaCogalmaScripti.instance.FircaCogalt();
+                for (int i = 0; i < kapideger; i++)
+                {
+                    FircaCogalmaScripti.instance.FircaEksilt();
+                }
             }
+            else
+            {
+                GameController.instance.isContinue = false;
+                Invoke("LoseBaslat", 1);
+            }
+
+
 
             // _degdigiObje = other.gameObject;
             //StartCoroutine(HavuzaGirisNumerator());
@@ -229,6 +229,16 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    private void WinBaslat()
+    {
+        UIController.instance.ActivateWinScreen();
+    }
+
+    private void LoseBaslat()
+    {
+        UIController.instance.ActivateLooseScreen();
+    }
+
     /// <summary>
     /// Bu fonksiyon her level baslarken cagrilir. 
     /// </summary>
@@ -253,6 +263,21 @@ public class PlayerController : MonoBehaviour
         _teddyObject.SetActive(false);
         _starObject.SetActive(false);
         _moneyObject.SetActive(false);
+
+
+        FircaCogalmaScripti.instance.fircaAdeti = 0;
+        FircaCogalmaScripti.instance.eksilmeAdeti = 0;
+        FircaCogalmaScripti.instance.FircayiSifirla();
+
+        P3dPaintDecal.instance.color = _renkler[5];
+
+        for (int i = 0; i < _fircaUcuParent.transform.childCount; i++)
+        {
+            _fircaUcuParent.transform.GetChild(i).gameObject.transform.GetChild(0).GetComponent<P3dPaintDecal>().color = _renkler[5];
+        }
+
+
+        _fircaUcu.GetComponent<MeshRenderer>().material.color = _renkler[5];
 
     }
 

@@ -779,7 +779,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3257536298978987485, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
       propertyPath: m_Text
-      value: "\xF72"
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303664202224538739, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
+      propertyPath: m_TagString
+      value: EksilmeKapisi
       objectReference: {fileID: 0}
     - target: {fileID: 9007011646375918866, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
       propertyPath: m_RootOrder
@@ -1295,7 +1299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 61adc9233ccdd4f2abd8b700109a5b71, type: 3}
       propertyPath: shaderIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 61adc9233ccdd4f2abd8b700109a5b71, type: 3}
       propertyPath: enableNormalMap
@@ -1307,7 +1311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 61adc9233ccdd4f2abd8b700109a5b71, type: 3}
       propertyPath: isMobilePlatform
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 61adc9233ccdd4f2abd8b700109a5b71, type: 3}
       propertyPath: waveDirectionXZ.x
@@ -1319,11 +1323,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 61adc9233ccdd4f2abd8b700109a5b71, type: 3}
       propertyPath: shaderNames.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 61adc9233ccdd4f2abd8b700109a5b71, type: 3}
       propertyPath: shaderNames.Array.data[0]
-      value: Desktop
+      value: Mobile
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 61adc9233ccdd4f2abd8b700109a5b71, type: 3}
       propertyPath: shaderNames.Array.data[1]
@@ -3015,6 +3019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MultiplyDoor (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2756137356976576444, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
+      propertyPath: _kapiDegeri
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3257536298978987485, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
       propertyPath: m_Text
       value: +5
@@ -3193,7 +3201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 36a462867274841ba90d52b65e7139ba, type: 3}
       propertyPath: shaderIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 36a462867274841ba90d52b65e7139ba, type: 3}
       propertyPath: waterColor.g
@@ -3221,7 +3229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 36a462867274841ba90d52b65e7139ba, type: 3}
       propertyPath: isMobilePlatform
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 36a462867274841ba90d52b65e7139ba, type: 3}
       propertyPath: waveDirectionXZ.x
@@ -3241,11 +3249,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 36a462867274841ba90d52b65e7139ba, type: 3}
       propertyPath: shaderNames.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 36a462867274841ba90d52b65e7139ba, type: 3}
       propertyPath: shaderNames.Array.data[0]
-      value: Desktop
+      value: Mobile
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 36a462867274841ba90d52b65e7139ba, type: 3}
       propertyPath: shaderNames.Array.data[1]
@@ -3561,7 +3569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3007556200385931092, guid: c32b1129b2d114e408b0b5485a5de45b, type: 3}
       propertyPath: shaderIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3007556200385931092, guid: c32b1129b2d114e408b0b5485a5de45b, type: 3}
       propertyPath: enableNormalMap
@@ -3573,7 +3581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3007556200385931092, guid: c32b1129b2d114e408b0b5485a5de45b, type: 3}
       propertyPath: isMobilePlatform
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3007556200385931092, guid: c32b1129b2d114e408b0b5485a5de45b, type: 3}
       propertyPath: waveDirectionXZ.x
@@ -3585,11 +3593,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3007556200385931092, guid: c32b1129b2d114e408b0b5485a5de45b, type: 3}
       propertyPath: shaderNames.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3007556200385931092, guid: c32b1129b2d114e408b0b5485a5de45b, type: 3}
       propertyPath: shaderNames.Array.data[0]
-      value: Desktop
+      value: Mobile
       objectReference: {fileID: 0}
     - target: {fileID: 3007556200385931092, guid: c32b1129b2d114e408b0b5485a5de45b, type: 3}
       propertyPath: shaderNames.Array.data[1]
@@ -3727,7 +3735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: shaderIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: fresnelColor.b
@@ -3751,15 +3759,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: isMobilePlatform
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: shaderNames.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: shaderNames.Array.data[0]
-      value: Desktop
+      value: Mobile
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: shaderNames.Array.data[1]
@@ -3945,7 +3953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 61adc9233ccdd4f2abd8b700109a5b71, type: 3}
       propertyPath: shaderIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 61adc9233ccdd4f2abd8b700109a5b71, type: 3}
       propertyPath: enableNormalMap
@@ -3957,7 +3965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 61adc9233ccdd4f2abd8b700109a5b71, type: 3}
       propertyPath: isMobilePlatform
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 61adc9233ccdd4f2abd8b700109a5b71, type: 3}
       propertyPath: waveDirectionXZ.x
@@ -3969,11 +3977,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 61adc9233ccdd4f2abd8b700109a5b71, type: 3}
       propertyPath: shaderNames.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 61adc9233ccdd4f2abd8b700109a5b71, type: 3}
       propertyPath: shaderNames.Array.data[0]
-      value: Desktop
+      value: Mobile
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 61adc9233ccdd4f2abd8b700109a5b71, type: 3}
       propertyPath: shaderNames.Array.data[1]
@@ -4205,9 +4213,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MultiplyDoor (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2756137356976576444, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
+      propertyPath: _kapiDegeri
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3257536298978987485, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
       propertyPath: m_Text
-      value: "\xF73"
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303664202224538739, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
+      propertyPath: m_TagString
+      value: EksilmeKapisi
       objectReference: {fileID: 0}
     - target: {fileID: 9007011646375918866, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
       propertyPath: m_RootOrder
@@ -4897,7 +4913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 851623bbe34324a119acc93ac8f13b0c, type: 3}
       propertyPath: shaderIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 851623bbe34324a119acc93ac8f13b0c, type: 3}
       propertyPath: waterColor.b
@@ -4933,7 +4949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 851623bbe34324a119acc93ac8f13b0c, type: 3}
       propertyPath: isMobilePlatform
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 851623bbe34324a119acc93ac8f13b0c, type: 3}
       propertyPath: waveDirectionXZ.x
@@ -4957,11 +4973,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 851623bbe34324a119acc93ac8f13b0c, type: 3}
       propertyPath: shaderNames.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 851623bbe34324a119acc93ac8f13b0c, type: 3}
       propertyPath: shaderNames.Array.data[0]
-      value: Desktop
+      value: Mobile
       objectReference: {fileID: 0}
     - target: {fileID: 4062880040712231861, guid: 851623bbe34324a119acc93ac8f13b0c, type: 3}
       propertyPath: shaderNames.Array.data[1]
@@ -5475,7 +5491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3257536298978987485, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
       propertyPath: m_Text
-      value: x2
+      value: +2
       objectReference: {fileID: 0}
     - target: {fileID: 9007011646375918866, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
       propertyPath: m_RootOrder
@@ -5913,7 +5929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: shaderIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: fresnelColor.b
@@ -5937,15 +5953,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: isMobilePlatform
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: shaderNames.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: shaderNames.Array.data[0]
-      value: Desktop
+      value: Mobile
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: shaderNames.Array.data[1]
@@ -7231,9 +7247,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MultiplyDoor (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2756137356976576444, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
+      propertyPath: _kapiDegeri
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3257536298978987485, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
       propertyPath: m_Text
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303664202224538739, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
+      propertyPath: m_TagString
+      value: EksilmeKapisi
       objectReference: {fileID: 0}
     - target: {fileID: 9007011646375918866, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
       propertyPath: m_RootOrder
@@ -7374,6 +7398,10 @@ PrefabInstance:
     - target: {fileID: 2632254716012118819, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
       propertyPath: m_Name
       value: MultiplyDoor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756137356976576444, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
+      propertyPath: _kapiDegeri
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3257536298978987485, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
       propertyPath: m_Text
@@ -7973,7 +8001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: shaderIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: fresnelColor.b
@@ -7997,15 +8025,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: isMobilePlatform
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: shaderNames.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: shaderNames.Array.data[0]
-      value: Desktop
+      value: Mobile
       objectReference: {fileID: 0}
     - target: {fileID: 7719595998000652422, guid: 1ac040e3895b7460eb6dee21f68f4b21, type: 3}
       propertyPath: shaderNames.Array.data[1]
@@ -8791,7 +8819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3007556200385931092, guid: c32b1129b2d114e408b0b5485a5de45b, type: 3}
       propertyPath: shaderIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3007556200385931092, guid: c32b1129b2d114e408b0b5485a5de45b, type: 3}
       propertyPath: enableNormalMap
@@ -8803,7 +8831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3007556200385931092, guid: c32b1129b2d114e408b0b5485a5de45b, type: 3}
       propertyPath: isMobilePlatform
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3007556200385931092, guid: c32b1129b2d114e408b0b5485a5de45b, type: 3}
       propertyPath: waveDirectionXZ.x
@@ -8815,11 +8843,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3007556200385931092, guid: c32b1129b2d114e408b0b5485a5de45b, type: 3}
       propertyPath: shaderNames.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3007556200385931092, guid: c32b1129b2d114e408b0b5485a5de45b, type: 3}
       propertyPath: shaderNames.Array.data[0]
-      value: Desktop
+      value: Mobile
       objectReference: {fileID: 0}
     - target: {fileID: 3007556200385931092, guid: c32b1129b2d114e408b0b5485a5de45b, type: 3}
       propertyPath: shaderNames.Array.data[1]
@@ -8897,7 +8925,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3257536298978987485, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
       propertyPath: m_Text
-      value: "\xF72"
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303664202224538739, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
+      propertyPath: m_TagString
+      value: EksilmeKapisi
       objectReference: {fileID: 0}
     - target: {fileID: 9007011646375918866, guid: 24c8d82edfaef594ca44c1d6af329d68, type: 3}
       propertyPath: m_RootOrder
