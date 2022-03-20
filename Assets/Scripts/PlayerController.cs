@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     private GameObject _degdigiObje;
 
 
+    [SerializeField] private ParticleSystem _confetti1, _confetti2;
+
 
 
     private void Awake()
@@ -51,6 +53,9 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("collectible"))
         {
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+
+
             FircaCogalmaScripti.instance.FircaCogalt();
             // COLLECTIBLE CARPINCA YAPILACAKLAR...
             GameController.instance.SetScore(collectibleDegeri); // ORNEK KULLANIM detaylar icin ctrl+click yapip fonksiyon aciklamasini oku
@@ -79,10 +84,11 @@ public class PlayerController : MonoBehaviour
             //GameController.instance.isContinue = false;
             GameController.instance._finisheGeldi = true;
             transform.position = new Vector3(0, transform.position.y, transform.position.z);
-            GameController.instance.ScoreCarp(1);  // Bu fonksiyon normalde x ler hesaplandıktan sonra çağrılacak. Parametre olarak x i alıyor. 
-                                                   // x değerine göre oyuncunun total scoreunu hesaplıyor.. x li olmayan oyunlarda parametre olarak 1 gönderilecek.
-                                                   //UIController.instance.ActivateWinScreen(); // finish noktasına gelebildiyse her türlü win screen aktif edilecek.. ama burada değil..
-                                                   // normal de bu kodu x ler hesaplandıktan sonra çağıracağız. Ve bu kod çağrıldığında da kazanılan puanlar animasyonlu şekilde artacak..
+            Time.timeScale = 1.5f;
+            //GameController.instance.ScoreCarp(1);  // Bu fonksiyon normalde x ler hesaplandıktan sonra çağrılacak. Parametre olarak x i alıyor. 
+            // x değerine göre oyuncunun total scoreunu hesaplıyor.. x li olmayan oyunlarda parametre olarak 1 gönderilecek.
+            //UIController.instance.ActivateWinScreen(); // finish noktasına gelebildiyse her türlü win screen aktif edilecek.. ama burada değil..
+            // normal de bu kodu x ler hesaplandıktan sonra çağıracağız. Ve bu kod çağrıldığında da kazanılan puanlar animasyonlu şekilde artacak..
 
 
         }
@@ -100,6 +106,7 @@ public class PlayerController : MonoBehaviour
         {
             // transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
             // transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 1f, transform.localPosition.z);
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
 
             int deger = other.gameObject.GetComponent<HavuzRengiScript>()._renkDegeri;
             P3dPaintDecal.instance.color = _renkler[deger];
@@ -118,9 +125,17 @@ public class PlayerController : MonoBehaviour
         else if (other.CompareTag("HavuzdanCikis"))
         {
             //transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
+            if (GameController.instance._havuzda == true)
+            {
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
 
-            GameController.instance._havuzda = false;
+                GameController.instance._havuzda = false;
+            }
+            else
+            {
+
+            }
+
 
             // _degdigiObje = other.gameObject;
             //StartCoroutine(HavuzaGirisNumerator());
@@ -129,6 +144,8 @@ public class PlayerController : MonoBehaviour
         {
             //transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
             //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
 
             FircaCogalmaScripti.instance.eksilmeAdeti = 0;
 
@@ -146,6 +163,8 @@ public class PlayerController : MonoBehaviour
         {
             //transform.position = new Vector3(other.gameObject.transform.position.x, transform.position.y, transform.position.z);
             //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
 
             FircaCogalmaScripti.instance.eksilmeAdeti = 0;
 
@@ -172,6 +191,9 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("StarKapisi"))
         {
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+
             GameController.instance._playerMoney = false;
             GameController.instance._playerKalp = false;
             GameController.instance._playerTeddy = false;
@@ -184,6 +206,9 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("TeddyKapisi"))
         {
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+
             GameController.instance._playerStar = false;
             GameController.instance._playerMoney = false;
             GameController.instance._playerKalp = false;
@@ -196,6 +221,9 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("KalpKapisi"))
         {
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+
             GameController.instance._playerTeddy = false;
             GameController.instance._playerStar = false;
             GameController.instance._playerMoney = false;
@@ -208,6 +236,9 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("MoneyKapisi"))
         {
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+
             GameController.instance._playerKalp = false;
             GameController.instance._playerTeddy = false;
             GameController.instance._playerStar = false;
@@ -217,6 +248,199 @@ public class PlayerController : MonoBehaviour
             _teddyObject.SetActive(false);
             _starObject.SetActive(false);
             _moneyObject.SetActive(true);
+        }
+        else if (other.CompareTag("X1"))
+        {
+            if (FircaCogalmaScripti.instance.fircaAdeti <= 2)
+            {
+                GameController.instance.isContinue = false;
+                GameController.instance.ScoreCarp(1);
+                Time.timeScale = 1;
+                _confetti1.gameObject.SetActive(true);
+                _confetti2.gameObject.SetActive(true);
+                _confetti1.Play();
+                _confetti2.Play();
+                Invoke("WinBaslat", 2);
+
+            }
+            else
+            {
+
+            }
+        }
+        else if (other.CompareTag("X2"))
+        {
+            if (FircaCogalmaScripti.instance.fircaAdeti > 2 && FircaCogalmaScripti.instance.fircaAdeti <= 4)
+            {
+                GameController.instance.isContinue = false;
+                GameController.instance.ScoreCarp(2);
+                Time.timeScale = 1;
+                _confetti1.gameObject.SetActive(true);
+                _confetti2.gameObject.SetActive(true);
+                _confetti1.Play();
+                _confetti2.Play();
+                Invoke("WinBaslat", 2);
+
+            }
+            else
+            {
+
+            }
+        }
+        else if (other.CompareTag("X3"))
+        {
+            if (FircaCogalmaScripti.instance.fircaAdeti > 4 && FircaCogalmaScripti.instance.fircaAdeti <= 6)
+            {
+                GameController.instance.isContinue = false;
+                GameController.instance.ScoreCarp(3);
+                Time.timeScale = 1;
+                _confetti1.gameObject.SetActive(true);
+                _confetti2.gameObject.SetActive(true);
+                _confetti1.Play();
+                _confetti2.Play();
+                Invoke("WinBaslat", 2);
+
+            }
+            else
+            {
+
+            }
+        }
+        else if (other.CompareTag("X4"))
+        {
+            if (FircaCogalmaScripti.instance.fircaAdeti > 6 && FircaCogalmaScripti.instance.fircaAdeti <= 8)
+            {
+                GameController.instance.isContinue = false;
+                GameController.instance.ScoreCarp(4);
+                Time.timeScale = 1;
+                _confetti1.gameObject.SetActive(true);
+                _confetti2.gameObject.SetActive(true);
+                _confetti1.Play();
+                _confetti2.Play();
+                Invoke("WinBaslat", 2);
+
+            }
+            else
+            {
+
+            }
+        }
+        else if (other.CompareTag("X5"))
+        {
+            if (FircaCogalmaScripti.instance.fircaAdeti > 8 && FircaCogalmaScripti.instance.fircaAdeti <= 10)
+            {
+                GameController.instance.isContinue = false;
+                GameController.instance.ScoreCarp(5);
+                Time.timeScale = 1;
+                _confetti1.gameObject.SetActive(true);
+                _confetti2.gameObject.SetActive(true);
+                _confetti1.Play();
+                _confetti2.Play();
+                Invoke("WinBaslat", 2);
+
+            }
+            else
+            {
+
+            }
+        }
+        else if (other.CompareTag("X6"))
+        {
+            if (FircaCogalmaScripti.instance.fircaAdeti > 10 && FircaCogalmaScripti.instance.fircaAdeti <= 12)
+            {
+                GameController.instance.isContinue = false;
+                GameController.instance.ScoreCarp(6);
+                Time.timeScale = 1;
+                _confetti1.gameObject.SetActive(true);
+                _confetti2.gameObject.SetActive(true);
+                _confetti1.Play();
+                _confetti2.Play();
+                Invoke("WinBaslat", 2);
+
+            }
+            else
+            {
+
+            }
+        }
+        else if (other.CompareTag("X7"))
+        {
+            if (FircaCogalmaScripti.instance.fircaAdeti > 12 && FircaCogalmaScripti.instance.fircaAdeti <= 14)
+            {
+                GameController.instance.isContinue = false;
+                GameController.instance.ScoreCarp(7);
+                Time.timeScale = 1;
+                _confetti1.gameObject.SetActive(true);
+                _confetti2.gameObject.SetActive(true);
+                _confetti1.Play();
+                _confetti2.Play();
+                Invoke("WinBaslat", 2);
+
+            }
+            else
+            {
+
+            }
+        }
+        else if (other.CompareTag("X8"))
+        {
+            if (FircaCogalmaScripti.instance.fircaAdeti > 14 && FircaCogalmaScripti.instance.fircaAdeti <= 16)
+            {
+                GameController.instance.isContinue = false;
+                GameController.instance.ScoreCarp(8);
+                Time.timeScale = 1;
+                _confetti1.gameObject.SetActive(true);
+                _confetti2.gameObject.SetActive(true);
+                _confetti1.Play();
+                _confetti2.Play();
+                Invoke("WinBaslat", 2);
+
+            }
+            else
+            {
+
+            }
+        }
+        else if (other.CompareTag("X9"))
+        {
+            if (FircaCogalmaScripti.instance.fircaAdeti > 16 && FircaCogalmaScripti.instance.fircaAdeti <= 18)
+            {
+                GameController.instance.isContinue = false;
+                GameController.instance.ScoreCarp(9);
+                Time.timeScale = 1;
+                _confetti1.gameObject.SetActive(true);
+                _confetti2.gameObject.SetActive(true);
+                _confetti1.Play();
+                _confetti2.Play();
+                Invoke("WinBaslat", 2);
+
+            }
+            else
+            {
+
+            }
+        }
+        else if (other.CompareTag("X10"))
+        {
+
+            GameController.instance.isContinue = false;
+            GameController.instance.ScoreCarp(10);
+            Time.timeScale = 1;
+            _confetti1.gameObject.SetActive(true);
+            _confetti2.gameObject.SetActive(true);
+            _confetti1.Play();
+            _confetti2.Play();
+            Invoke("WinBaslat", 2);
+
+
+        }
+        else if (other.CompareTag("TirnakObjesi"))
+        {
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        }
+        else
+        {
+
         }
 
     }
@@ -278,6 +502,9 @@ public class PlayerController : MonoBehaviour
 
 
         _fircaUcu.GetComponent<MeshRenderer>().material.color = _renkler[5];
+
+        _confetti1.gameObject.SetActive(false);
+        _confetti2.gameObject.SetActive(false);
 
     }
 
