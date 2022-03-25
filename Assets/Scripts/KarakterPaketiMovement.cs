@@ -4,11 +4,24 @@ using UnityEngine;
 
 public class KarakterPaketiMovement : MonoBehaviour
 {
+
+    public static KarakterPaketiMovement instance;
+
     [SerializeField] private float _speed;
+
+    private float _ilkHiz;
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+
+        _ilkHiz = _speed;
+        //else Destroy(this);
+    }
 
     void Start()
     {
-     
+
     }
 
 
@@ -22,7 +35,22 @@ public class KarakterPaketiMovement : MonoBehaviour
         {
 
         }
-        
+
+    }
+
+    public void KarakterYavaslat()
+    {
+        _speed = _ilkHiz / 2;
+    }
+
+    public void KarakterHizlandir()
+    {
+        _speed = _ilkHiz * 2;
+    }
+
+    public void KarakterHizNormal()
+    {
+        _speed = _ilkHiz;
     }
 
 }

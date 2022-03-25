@@ -84,7 +84,8 @@ public class PlayerController : MonoBehaviour
             //GameController.instance.isContinue = false;
             GameController.instance._finisheGeldi = true;
             transform.position = new Vector3(0, transform.position.y, transform.position.z);
-            Time.timeScale = 1.5f;
+            KarakterPaketiMovement.instance.KarakterHizlandir();
+            //Time.timeScale = 1.5f;
             //GameController.instance.ScoreCarp(1);  // Bu fonksiyon normalde x ler hesaplandıktan sonra çağrılacak. Parametre olarak x i alıyor. 
             // x değerine göre oyuncunun total scoreunu hesaplıyor.. x li olmayan oyunlarda parametre olarak 1 gönderilecek.
             //UIController.instance.ActivateWinScreen(); // finish noktasına gelebildiyse her türlü win screen aktif edilecek.. ama burada değil..
@@ -437,12 +438,44 @@ public class PlayerController : MonoBehaviour
         else if (other.CompareTag("TirnakObjesi"))
         {
             MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+
+            if (GameController.instance._finisheGeldi == false)
+            {
+                KarakterPaketiMovement.instance.KarakterYavaslat();
+            }
+            else
+            {
+
+            }
+
+            FircaCogalmaScripti.instance.TirnagaDegiyor();
         }
         else
         {
 
         }
 
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("TirnakObjesi"))
+        {
+            if (GameController.instance._finisheGeldi == false)
+            {
+                KarakterPaketiMovement.instance.KarakterHizNormal();
+            }
+            else
+            {
+
+            }
+
+            FircaCogalmaScripti.instance.TirnagaDegmiyor();
+        }
+        else
+        {
+
+        }
     }
 
 
@@ -505,6 +538,8 @@ public class PlayerController : MonoBehaviour
 
         _confetti1.gameObject.SetActive(false);
         _confetti2.gameObject.SetActive(false);
+
+        KarakterPaketiMovement.instance.KarakterHizNormal();
 
     }
 

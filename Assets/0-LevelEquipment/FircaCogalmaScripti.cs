@@ -16,6 +16,10 @@ public class FircaCogalmaScripti : MonoBehaviour
 
     [HideInInspector] public int eksilmeAdeti;
 
+    private int _toplamSayi;
+
+    private int _fircaSayisi;
+
 
     private void Awake()
     {
@@ -92,5 +96,79 @@ public class FircaCogalmaScripti : MonoBehaviour
             Destroy(cogalacakObjeParent.transform.GetChild(cogalacakObjeParent.transform.childCount - 1 - i).gameObject);
 
         }
+    }
+
+    public void TirnagaDegiyor()
+    {
+
+        fircaAdeti = 0;
+
+        //StartCoroutine(FircaHareketAcilma());
+
+        for (int i = 0; i < cogalacakObjeParent.transform.childCount; i += 2)
+        {
+
+
+            fircaAdeti++;
+            donusDegeri = fircaAdeti * 3;
+
+            cogalacakObjeParent.transform.GetChild(i).transform.eulerAngles = new Vector3((-90 + donusDegeri), 90, -180);
+            cogalacakObjeParent.transform.GetChild(i + 1).transform.eulerAngles = new Vector3((-90 - donusDegeri), 90, -180);
+
+        }
+
+    }
+
+    public void TirnagaDegmiyor()
+    {
+        //_fircaSayisi = fircaAdeti;
+        fircaAdeti = 0;
+
+        //StartCoroutine(FircaHareketKapanma());
+
+
+        for (int i = 0; i < cogalacakObjeParent.transform.childCount; i += 2)
+        {
+
+            fircaAdeti++;
+            donusDegeri = fircaAdeti * degerRotasyon;
+
+            cogalacakObjeParent.transform.GetChild(i).transform.eulerAngles = new Vector3((-90 + donusDegeri), 90, -180);
+            cogalacakObjeParent.transform.GetChild(i + 1).transform.eulerAngles = new Vector3((-90 - donusDegeri), 90, -180);
+
+        }
+    }
+
+    private IEnumerator FircaHareketKapanma()
+    {
+        for (int i = cogalacakObjeParent.transform.childCount - 1; i > 0; i -= 2)
+        {
+            yield return new WaitForSeconds(0.1f);
+
+            fircaAdeti++;
+            donusDegeri = fircaAdeti * degerRotasyon;
+            _fircaSayisi--;
+
+            cogalacakObjeParent.transform.GetChild(i).transform.eulerAngles = new Vector3((-90 + donusDegeri), 90, -180);
+            cogalacakObjeParent.transform.GetChild(i - 1).transform.eulerAngles = new Vector3((-90 - donusDegeri), 90, -180);
+
+        }
+
+    }
+
+    private IEnumerator FircaHareketAcilma()
+    {
+        for (int i = cogalacakObjeParent.transform.childCount - 1; i > 0; i -= 2)
+        {
+            yield return new WaitForSeconds(0.1f);
+
+            fircaAdeti++;
+            donusDegeri = fircaAdeti * 4;
+
+            cogalacakObjeParent.transform.GetChild(i).transform.eulerAngles = new Vector3((-90 + donusDegeri), 90, -180);
+            cogalacakObjeParent.transform.GetChild(i - 1).transform.eulerAngles = new Vector3((-90 - donusDegeri), 90, -180);
+
+        }
+
     }
 }
