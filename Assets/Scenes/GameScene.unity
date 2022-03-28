@@ -5967,6 +5967,7 @@ MonoBehaviour:
   cogalacakObjeParent: {fileID: 1019699758}
   degerRotasyon: 1
   eksilmeAdeti: 0
+  _durum: 0
 --- !u!114 &6849821079263090043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6050,6 +6051,7 @@ GameObject:
   - component: {fileID: 4541023608402333432}
   - component: {fileID: 7948366028731414057}
   - component: {fileID: 7948366028731414056}
+  - component: {fileID: 7948366028731414058}
   m_Layer: 0
   m_Name: FircaBolumu
   m_TagString: FircaBolumu
@@ -6086,6 +6088,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.042741556, y: 0.015160594, z: 0.020000001}
   m_Center: {x: -0.013888655, y: 0.000035433975, z: -0.010000064}
+--- !u!114 &7948366028731414058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7948366028731414055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0696b3fd21c48faa42988557cf9c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _myId: 0
+  _idleRotation: {x: 0, y: 0, z: 0}
+  _aciDegisimMiktari: 1
 --- !u!222 &8065103501126037052
 CanvasRenderer:
   m_ObjectHideFlags: 0

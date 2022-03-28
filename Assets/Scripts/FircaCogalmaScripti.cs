@@ -22,6 +22,8 @@ public class FircaCogalmaScripti : MonoBehaviour
 
     private bool _aciArtir, _aciAzalt, _tirnaktaMi;
 
+    public bool _durum;
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -33,62 +35,10 @@ public class FircaCogalmaScripti : MonoBehaviour
     {
         fircaAdeti = 0;
         eksilmeAdeti = 0;
+        _durum = false;
         _aciArtir = false;
         _tirnaktaMi = false;
         _aciAzalt = false;
-    }
-
-
-    private void FixedUpdate()
-    {
-        if (_tirnaktaMi)
-        {
-            if (_aciArtir)
-            {
-                for (int i = 0; i < cogalacakObjeParent.transform.childCount; i += 2)
-                {
-
-
-                    fircaAdeti++;
-                    donusDegeri = fircaAdeti * 3;
-
-                    //Vector3.Lerp(transform.eulerAngles, new Vector3((-90 + donusDegeri), 90, -180), Time.deltaTime * 2);
-                    cogalacakObjeParent.transform.GetChild(i).transform.rotation = Quaternion.Lerp(cogalacakObjeParent.transform.GetChild(i).transform.rotation, Quaternion.Euler((-90 + donusDegeri), 90, -180), Time.deltaTime * 5);
-                    cogalacakObjeParent.transform.GetChild(i + 1).transform.rotation = Quaternion.Lerp(cogalacakObjeParent.transform.GetChild(i + 1).transform.rotation, Quaternion.Euler((-90 - donusDegeri), 90, -180), Time.deltaTime * 5);
-                    //cogalacakObjeParent.transform.GetChild(i).transform.eulerAngles = new Vector3((-90 + donusDegeri), 90, -180);
-                    //cogalacakObjeParent.transform.GetChild(i + 1).transform.eulerAngles = new Vector3((-90 - donusDegeri), 90, -180);
-
-                }
-                //_tirnaktaMi = false;
-                Invoke("Zamanlama", 0.1f);
-            }
-            else if (_aciAzalt)
-            {
-                for (int i = 0; i < cogalacakObjeParent.transform.childCount; i += 2)
-                {
-
-                    fircaAdeti++;
-                    donusDegeri = fircaAdeti * degerRotasyon;
-
-                    cogalacakObjeParent.transform.GetChild(i).transform.rotation = Quaternion.Lerp(cogalacakObjeParent.transform.GetChild(i).transform.rotation, Quaternion.Euler((-90 + donusDegeri), 90, -180), Time.deltaTime * 5);
-                    cogalacakObjeParent.transform.GetChild(i + 1).transform.rotation = Quaternion.Lerp(cogalacakObjeParent.transform.GetChild(i + 1).transform.rotation, Quaternion.Euler((-90 - donusDegeri), 90, -180), Time.deltaTime * 5);
-                    //cogalacakObjeParent.transform.GetChild(i).transform.eulerAngles = new Vector3((-90 + donusDegeri), 90, -180);
-                    //cogalacakObjeParent.transform.GetChild(i + 1).transform.eulerAngles = new Vector3((-90 - donusDegeri), 90, -180);
-
-                }
-                Invoke("Zamanlama", 0.1f);
-                //_tirnaktaMi = false;
-            }
-        }
-        else
-        {
-
-        }
-    }
-
-    private void Zamanlama()
-    {
-        _tirnaktaMi = false;
     }
 
 
@@ -133,6 +83,12 @@ public class FircaCogalmaScripti : MonoBehaviour
         tempObj1.transform.eulerAngles = new Vector3((-90 + donusDegeri), 90, -180);
         tempObj2.transform.eulerAngles = new Vector3((-90 - donusDegeri), 90, -180);
 
+        tempObj1.GetComponent<TelScript>()._idleRotation = new Vector3((-90 + donusDegeri), 90, -180);
+        tempObj2.GetComponent<TelScript>()._idleRotation = new Vector3((-90 - donusDegeri), 90, -180);
+
+        tempObj1.GetComponent<TelScript>()._myId = -fircaAdeti;
+        tempObj2.GetComponent<TelScript>()._myId = fircaAdeti;
+
         //eksilmeAdeti = 0;
     }
 
@@ -159,11 +115,12 @@ public class FircaCogalmaScripti : MonoBehaviour
     public void TirnagaDegiyor()
     {
 
-        fircaAdeti = 0;
+        //fircaAdeti = 0;
+        _durum = true;
 
-        _aciAzalt = false;
-        _aciArtir = true;
-        _tirnaktaMi = true;
+        // _aciAzalt = false;
+        // _aciArtir = true;
+        // _tirnaktaMi = true;
 
         //StartCoroutine(FircaHareketAcilma());
         /*
@@ -185,11 +142,12 @@ public class FircaCogalmaScripti : MonoBehaviour
     public void TirnagaDegmiyor()
     {
         //_fircaSayisi = fircaAdeti;
-        fircaAdeti = 0;
+        //fircaAdeti = 0;
+        _durum = false;
 
-        _aciArtir = false;
-        _aciAzalt = true;
-        _tirnaktaMi = true;
+        // _aciArtir = false;
+        // _aciAzalt = true;
+        // _tirnaktaMi = true;
 
         //StartCoroutine(FircaHareketKapanma());
 
