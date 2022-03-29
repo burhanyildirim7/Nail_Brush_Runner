@@ -22,7 +22,7 @@ public class TelScript : MonoBehaviour
 
 
 
-    void Update()
+    void FixedUpdate()
     {
         if (_myId == 0)
         {
@@ -30,27 +30,15 @@ public class TelScript : MonoBehaviour
         }
         else
         {
-            if (FircaCogalmaScripti.instance._durum == true && transform.eulerAngles != _idleRotation)
+            if (FircaCogalmaScripti.instance._durum == true && transform.eulerAngles != new Vector3(-90 + (_myId * 4), 90, -180))
             {
-                if (_myId > 0)
-                {
-                    transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(_myId * 4, 0, 0), _aciDegisimMiktari);
-                }
-                else
-                {
-                    transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, _idleRotation, _aciDegisimMiktari);
-                }
+                //transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(-90 + (_myId * 4), 90, -180), 1f);
+                StartCoroutine(AciArtirma());
             }
             else if (FircaCogalmaScripti.instance._durum == false && transform.eulerAngles != _idleRotation)
             {
-                if (_myId > 0)
-                {
-                    transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, _idleRotation, _aciDegisimMiktari);
-                }
-                else
-                {
-                    transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(_myId * 4, 0, 0), _aciDegisimMiktari);
-                }
+                //transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, _idleRotation, 1f);
+                StartCoroutine(AciAzaltma());
             }
             else
             {
@@ -58,6 +46,18 @@ public class TelScript : MonoBehaviour
             }
         }
 
+        IEnumerator AciArtirma()
+        {
+            transform.eulerAngles = transform.eulerAngles + new Vector3(-90f + (_myId * 4 * 0.01f), 90, -180);
+            yield return new WaitForSeconds(0.01f);
+        }
+
+
+        IEnumerator AciAzaltma()
+        {
+            transform.eulerAngles = transform.eulerAngles - new Vector3(-90f + (_myId * 4 * 0.01f), 90, -180);
+            yield return new WaitForSeconds(0.01f);
+        }
 
     }
 }

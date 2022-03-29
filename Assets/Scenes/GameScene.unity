@@ -6102,7 +6102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myId: 0
   _idleRotation: {x: 0, y: 0, z: 0}
-  _aciDegisimMiktari: 1
+  _aciDegisimMiktari: 0.01
 --- !u!222 &8065103501126037052
 CanvasRenderer:
   m_ObjectHideFlags: 0
